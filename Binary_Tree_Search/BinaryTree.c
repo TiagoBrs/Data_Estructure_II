@@ -13,9 +13,6 @@ struct _tree{
 	Node* root;
 };
 
-
-
-
 //Aux Functions
 void auxIn_Order(Node* node);
 void auxPre_Order(Node* node);
