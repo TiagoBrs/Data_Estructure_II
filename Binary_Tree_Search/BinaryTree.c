@@ -18,6 +18,7 @@ void auxIn_Order(Node* node);
 void auxPre_Order(Node* node);
 
 Node* treeMin(Node* node);
+Node* treeMax(Node* node);
 
 
 Node* Create_Node(int info);
@@ -125,7 +126,7 @@ void Tree_Delete(BinaryTree* tree, int key){
 		else{
 			Node* successor = treeMin(to_delete->right);
 
-			if(successor->parent != successor){
+			if(successor->parent != to_delete){
 				//Seta a subávore a direita pois, o sucessor não é filho e seus dois ponteiros devem ser atualizados
 				Transplant(tree, successor, successor->right);
 				successor->right = to_delete->right;
@@ -162,6 +163,12 @@ Node* treeMin(Node* node){
 	return node;
 }
 
+Node* treeMax(Node* node){
+	while(node->right != NULL){
+		node = node->right;
+	}
+	return node;
+}
 
 void auxPre_Order(Node* node){
 	if(node!=NULL){

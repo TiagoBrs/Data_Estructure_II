@@ -16,6 +16,10 @@ struct _tree{
 };
 
 int Insert(int key, Node* current, bool* h, AVLTree* tree);
+
+Node* Left_Rotation(AVLTree* tree, Node* X);
+Node* Right_Rotation(AVLTree* tree, Node* X);
+
 Node* Case_1(Node* pt, bool* h);
 Node* Case_2(Node* pt, bool* h);
 
@@ -37,7 +41,33 @@ Node* Create_Node(int info){
 	return new_node;
 }
 
-Node* Left_Rotation(Node* X){
+
+void AVL_Insert(AVLTree* tree, Node** node, int info, bool* h){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Node* Left_Rotation(AVLTree* tree, Node* X){
 	Node* Y = X->right;
 	
 	X->right = Y->left;
@@ -57,12 +87,15 @@ Node* Left_Rotation(Node* X){
 			X->parent->right = Y;
 		}
 	}
+	else{
+		tree->root = Y;
+	}
 	Y->left = X;
 	X->parent = Y;
 	return Y;
 }
 
-Node* Right_Rotation(Node* X){
+Node* Right_Rotation(AVLTree* tree, Node* X){
 	Node* Y = X->left;
 	
 	X->left = Y->right;
@@ -82,10 +115,14 @@ Node* Right_Rotation(Node* X){
 			X->parent->right = Y;
 		}
 	}
+	else{
+		tree->root = Y;
+	}
 	Y->right = X;
 	X->parent = Y;
 	return Y;
 }
+
 
 void Aux_In_Order(Node* v){
 	Aux_In_Order(v->left);
