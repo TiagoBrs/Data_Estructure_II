@@ -3,14 +3,14 @@
 
 typedef struct _tree RB_Tree;
 
-BinaryTree* Create_Btree();
+RB_Tree* RB_Create();
 
-int Insert_Btree(BinaryTree*, int);
+int RB_Insert(RB_Tree*, int);
 
-void pre_Order(BinaryTree*);
-void in_Order(BinaryTree*);
+void pre_Order(RB_Tree*);
+void in_Order(RB_Tree*);
 
-void Tree_Delete(BinaryTree*, int);
+void Tree_Delete(RB_Tree*, int);
 
 
 #endif
