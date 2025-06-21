@@ -14,5 +14,13 @@ int main(){
 	putchar('\n');
 	pre_Order(T);
 
+	putchar('\n');
+
+	RB_Delete(T, 12);
+
+	in_Order(T);
+	putchar('\n');
+	pre_Order(T);
+
 	return 0;
 }

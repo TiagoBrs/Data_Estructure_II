@@ -10,7 +10,8 @@ int RB_Insert(RB_Tree*, int);
 void pre_Order(RB_Tree*);
 void in_Order(RB_Tree*);
 
-void Tree_Delete(RB_Tree*, int);
+void RB_Delete(RB_Tree*, int);
+
 
 
 #endif
